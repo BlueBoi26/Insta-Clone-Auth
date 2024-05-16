@@ -1,6 +1,4 @@
 import React from "react";
-import "./Sidenav.css";
-
 // note how the imported name can be changed relative to the actual
 // icon's name given by @mui (e.g., MoreIcon vs MenuOutlineIcon)
 import HomeIcon from "@mui/icons-material/Home";
@@ -17,74 +15,76 @@ function Sidenav() {
     "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1600px-Instagram_logo.svg.png";
 
   return (
-    <div className="sidenav">
-      <a href="https://www.instagram.com/" alt="link to Instagram">
-        <img className="sidenav__logo" src={url} alt="instagram logo" />{" "}
+    <div className="fixed flex flex-col justify-between z-1 hover:cursor-pointer">
+      <a href="https://www.instagram.com/">
+        <img className="w-[120px] m-[25px]" src={url} alt="instagram logo" />{" "}
       </a>
 
-      <div className="sidenav__button-container">
-        <button className="sidenav__button">
+      <div className="flex flex-col">
+        <button className="flex flex-row items-center bg-none border-none my-[5px] mx-2.5 py-2.5 px-[15px] rounded-[15px] w-full hover:cursor-pointer hover:bg-slate-400">
           {/* wrap the @mui icon in its own wrapper div so that the div size
               can remain fixed while the icon is resized on hover, without
               affecting the span's text within the button */}
-          <div className="sidenav__icon-wrapper">
-            <HomeIcon className="material-icons the-icon" />
+          <div className="w-[30px] h-[30px]">
+            <HomeIcon className="text-2xl mt-0.5 ml-0.5 transition-all duration-150 ease-linear delay-0 hover:text-3xl hover:mt-0 hover:ml-0" />
           </div>
-          <span>Home</span>
+          <span className="text-base font-normal ml-10">Home</span>
         </button>
 
-        <button className="sidenav__button">
-          <div className="sidenav__icon-wrapper">
-            <SearchIcon className="material-icons the-icon" />
+        <button className="flex flex-row items-center bg-none border-none my-[5px] mx-2.5 py-2.5 px-[15px] rounded-[15px] w-full hover:cursor-pointer hover:bg-slate-400">
+          <div className="w-[30px] h-[30px]">
+            <SearchIcon className="text-2xl mt-0.5 ml-0.5 transition-all duration-150 ease-linear delay-0 hover:text-3xl hover:mt-0 hover:ml-0" />
           </div>
-          <span>Search</span>
+          <span className="text-base font-normal ml-10">Search</span>
         </button>
 
-        <button className="sidenav__button">
-          <div className="sidenav__icon-wrapper">
-            <ExploreIcon className="material-icons the-icon" />
+        <button className="flex flex-row items-center bg-none border-none my-[5px] mx-2.5 py-2.5 px-[15px] rounded-[15px] w-full hover:cursor-pointer hover:bg-slate-400">
+          <div className="w-[30px] h-[30px]">
+            <ExploreIcon className="text-2xl mt-0.5 ml-0.5 transition-all duration-150 ease-linear delay-0 hover:text-3xl hover:mt-0 hover:ml-0" />
           </div>
-          <span>Explore</span>
+          <span className="text-base font-normal ml-10">Explore</span>
         </button>
 
-        <button className="sidenav__button">
-          <div className="sidenav__icon-wrapper">
-            <ReelsIcon className="material-icons the-icon" />
+        <button className="flex flex-row items-center bg-none border-none my-[5px] mx-2.5 py-2.5 px-[15px] rounded-[15px] w-full hover:cursor-pointer hover:bg-slate-400">
+          <div className="w-[30px] h-[30px]">
+            <ReelsIcon className="text-2xl mt-0.5 ml-0.5 transition-all duration-150 ease-linear delay-0 hover:text-3xl hover:mt-0 hover:ml-0" />
           </div>
-          <span>Reels</span>
+          <span className="text-base font-normal ml-10">Reels</span>
         </button>
 
-        <button className="sidenav__button">
-          <div className="sidenav__icon-wrapper">
+        <button className="flex flex-row items-center bg-none border-none my-[5px] mx-2.5 py-2.5 px-[15px] rounded-[15px] w-full hover:cursor-pointer hover:bg-slate-400">
+          <div className="w-[30px] h-[30px]">
             <MessagesIcon
-              className="material-icons the-icon"
+              className="text-2xl mt-0.5 ml-0.5 transition-all duration-150 ease-linear delay-0 hover:text-3xl hover:mt-0 hover:ml-0"
               id="messages-icon"
             />
           </div>
-          <span>Message</span>
+          <span className="text-base font-normal ml-10">Message</span>
         </button>
 
-        <button className="sidenav__button">
-          <div className="sidenav__icon-wrapper">
-            <NotificationsIcon className="material-icons the-icon" />
+        <button className="flex flex-row items-center bg-none border-none my-[5px] mx-2.5 py-2.5 px-[15px] rounded-[15px] w-full hover:cursor-pointer hover:bg-slate-400">
+          <div className="w-[30px] h-[30px]">
+            <NotificationsIcon className="text-2xl mt-0.5 ml-0.5 transition-all duration-150 ease-linear delay-0 hover:text-3xl hover:mt-0 hover:ml-0" />
           </div>
-          <span>Notifications</span>
+          <span className="text-base font-normal ml-10">Notifications</span>
         </button>
 
-        <button className="sidenav__button">
-          <div className="sidenav__icon-wrapper">
-            <CreateIcon className="material-icons the-icon" />
+        <button className="flex flex-row items-center bg-none border-none my-[5px] mx-2.5 py-2.5 px-[15px] rounded-[15px] w-full hover:cursor-pointer hover:bg-slate-400">
+          <div className="w-[30px] h-[30px]">
+            <CreateIcon className="text-2xl mt-0.5 ml-0.5 transition-all duration-150 ease-linear delay-0 hover:text-3xl hover:mt-0 hover:ml-0" />
           </div>
-          <span>Create</span>
+          <span className="text-base font-normal ml-10">Create</span>
         </button>
       </div>
 
-      <div className="sidenav__more-container">
-        <button className="sidenav__button">
-          <div className="sidenav__icon-wrapper">
-            <MoreIcon className="material-icons the-icon" />
+      <div className="fixed bottom-[3px]">
+        <button className="flex flex-row items-center bg-none border-none my-[5px] mx-2.5 py-2.5 px-[15px] rounded-[15px] w-full hover:cursor-pointer hover:hover:bg-slate-400">
+          <div className="w-[30px] h-[30px]">
+            <MoreIcon className="text-2xl mt-0.5 ml-0.5 transition-all duration-150 ease-linear delay-0 hover:text-3xl hover:mt-0 hover:ml-0" />
           </div>
-          <span>More</span>
+          <span className="text-base font-normal ml-10 transform rotate-30">
+            More
+          </span>
         </button>
       </div>
     </div>

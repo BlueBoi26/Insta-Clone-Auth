@@ -2,23 +2,23 @@ import React from "react";
 import Avatar from "@mui/material/Avatar";
 import { faker } from "@faker-js/faker";
 
-import "./Suggestions.css";
-
 function Suggestion({ username, message }: SuggestionProps) {
   return (
-    <div className="suggestions__one-user">
-      <div className="suggestions__avatar-and-username">
-        <div className="suggestions__avatar">
+    <div className="flex flex-row justify-between mb-2.5">
+      <div className="flex flex-row hover:cursor-pointer">
+        <div className="mr-2.5">
           <Avatar>
             <img src={faker.image.avatar()} />
           </Avatar>
         </div>
-        <div className="suggestions__username-and-message">
-          <span className="suggestions__username">{username}</span>
-          <span className="suggestions__message">{message}</span>
+        <div className="fle flex-col">
+          <span className="font-extrabold">{username}</span>
+          <span className="font-light text-sm">{message}</span>
         </div>
       </div>
-      <button className="suggestions__follow-button">Follow</button>
+      <button className="bg-none border-none text-blue-400 font-bold hover:cursor-pointer hover:text-slate-400">
+        Follow
+      </button>
     </div>
   );
 }

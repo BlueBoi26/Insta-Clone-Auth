@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Suggestion from "./Suggestion";
-import "./Suggestions.css";
 
 export interface SuggestionProps {
   username: string;
@@ -16,12 +15,14 @@ function Suggestions() {
   ]);
 
   return (
-    <div className="suggestions">
-      <div className="suggestions__title">
+    <div className="w-[350px] mt-[30px] ml-[50px] font-sans">
+      <div className="flex flex-row bg-none border-none justify-between mb-2.5 text-slate-400">
         <span>Suggested for you</span>
-        <button>See all</button>
+        <button className="bg-none border-none font-extrabold text-black hover:cursor-pointer hover:text-slate-400">
+          See all
+        </button>
       </div>
-      <div className="suggestions__users">
+      <div className="w-full flex flex-col">
         {suggestions.map((suggestion: SuggestionProps) => (
           <Suggestion
             key={suggestion.username} // o/w, warning about needing unique key prop
