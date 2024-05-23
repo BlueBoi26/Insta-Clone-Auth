@@ -9,8 +9,19 @@ import MessagesIcon from "@mui/icons-material/SendOutlined";
 import NotificationsIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import CreateIcon from "@mui/icons-material/AddBoxOutlined";
 import MoreIcon from "@mui/icons-material/MenuOutlined";
+import { Avatar } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutUser } from "../features/userSlice";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
 
 function Sidenav() {
+  const user = useSelector((state) => state.data.user.user);
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    signOut(auth);
+  };
   let url =
     "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1600px-Instagram_logo.svg.png";
 
@@ -87,6 +98,21 @@ function Sidenav() {
           </span>
         </button>
       </div>
+
+      <button className="group flex flex-row items-center bg-none border-none mx-1.5 my-2.5 rounded-2xl w-full hover:cursor-pointer hover:bg-neutral-400/10">
+        <Avatar>
+          {user.username ? user.username.charAt(0).toUpperCase() : "U"}
+        </Avatar>
+        <span>
+          {user.username}
+          <button
+            onClick={handleLogout}
+            className="text-[15px] rounded-[15px] font-bold bg-[rgba(255,255,255,0.211)] hover:cursor-pointer hover:bg-[rgba(255,255,255,0.424)] p-2.5 border-0"
+          >
+            Log out
+          </button>
+        </span>
+      </button>
     </div>
   );
 }

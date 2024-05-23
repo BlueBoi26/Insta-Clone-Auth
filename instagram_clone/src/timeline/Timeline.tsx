@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Suggestions from "../suggestions/Suggestions";
 import Post from "./posts/Post";
-import "./Timeline.css";
 
 // see https://youtu.be/SqcY0GlETPk?t=3148
 export interface PostProps {
@@ -41,9 +40,9 @@ function Timeline() {
   ]);
 
   return (
-    <div className="timeline">
-      <div className="timeline__left">
-        <div className="timeline__posts">
+    <div className="flex flex-ro">
+      <div className="flex flex-col">
+        <div className="flex flex-col">
           {posts.map((post: PostProps) => (
             <Post
               key={post.user} // o/w, warning that each child in list should have unique 'key' prop
